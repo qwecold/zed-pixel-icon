@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Zed Pixel Icon — preview</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #16181c;
+        --panel: #1e2025;
+        --panel-2: #23262c;
+        --line: #2c3037;
+        --text: #d6d9df;
+        --muted: #8b909a;
+        --accent: #f9c22b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: var(--bg);
+      }
+
+      body {
+        width: 1240px;
+        margin: 0 auto;
+        padding: 36px 40px 40px;
+        background:
+          radial-gradient(circle at 12% -10%, rgba(249, 194, 43, 0.14), transparent 42%),
+          radial-gradient(circle at 100% 0%, rgba(94, 129, 244, 0.12), transparent 38%),
+          var(--bg);
+        color: var(--text);
+        font-family: "Segoe UI", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 26px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: -0.02em;
+      }
+
+      h1 span {
+        color: var(--accent);
+      }
+
+      header p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .badge {
+        border: 1px solid #3a3f48;
+        background: #202329;
+        color: #c8ccd4;
+        border-radius: 999px;
+        padding: 7px 14px;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 380px 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .panel-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 11px 14px;
+        border-bottom: 1px solid var(--line);
+        background: var(--panel-2);
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .dots {
+        display: flex;
+        gap: 5px;
+        margin-left: auto;
+      }
+
+      .dots i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #3b4049;
+        display: block;
+      }
+
+      .tree {
+        padding: 8px 6px 12px;
+        font-size: 13.5px;
+        line-height: 1.2;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        height: 25px;
+        padding: 0 8px;
+        border-radius: 6px;
+        white-space: nowrap;
+      }
+
+      .row:hover {
+        background: #262a31;
+      }
+
+      .row img {
+        width: 16px;
+        height: 16px;
+        flex: none;
+        image-rendering: pixelated;
+      }
+
+      .row .chev {
+        width: 10px;
+        height: 10px;
+        flex: none;
+        opacity: 0.55;
+      }
+
+      .row .chev.blank {
+        visibility: hidden;
+      }
+
+      .folder {
+        color: #e3e6eb;
+      }
+
+      .file {
+        color: #c3c7cf;
+      }
+
+      .dim {
+        color: #6f747d;
+      }
+
+      .indent-1 {
+        padding-left: 22px;
+      }
+
+      .indent-2 {
+        padding-left: 40px;
+      }
+
+      .indent-3 {
+        padding-left: 58px;
+      }
+
+      .grid-panel {
+        padding: 18px 18px 22px;
+      }
+
+      .section-label {
+        margin: 0 0 14px;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .tiles {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .tile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 13px 6px 11px;
+        background: var(--panel-2);
+        border: 1px solid #2a2e35;
+        border-radius: 9px;
+        min-height: 88px;
+      }
+
+      .tile img {
+        width: 34px;
+        height: 34px;
+        image-rendering: pixelated;
+      }
+
+      .tile span {
+        font-size: 10.5px;
+        color: #a6abb4;
+        text-align: center;
+        line-height: 1.15;
+      }
+
+      .folders {
+        margin-top: 22px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .folder-row {
+        display: grid;
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .folder-tile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 4px;
+        border-radius: 8px;
+        background: #1b1d22;
+      }
+
+      .folder-tile img {
+        width: 26px;
+        height: 26px;
+        image-rendering: pixelated;
+      }
+
+      .folder-tile span {
+        font-size: 10px;
+        color: #8f949d;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Zed <span>Pixel</span> Icon</h1>
+        <p>Pixel-art file and folder icons for the Zed project panel.</p>
+      </div>
+      <div class="badge">16 × 16 pixel art</div>
+    </header>
+
+    <div class="layout">
+      <div class="panel">
+        <div class="panel-title">
+          PROJECT
+          <span class="dots"><i></i><i></i><i></i></span>
+        </div>
+        <div class="tree">
+          <div class="row folder"><span class="chev blank"></span><img src="../icons/folders/folder-open.svg" />zed-pixel-icon</div>
+          <div class="row folder indent-1"><span class="chev"></span><img src="../icons/folders/src.svg" />src</div>
+          <div class="row file indent-2"><span class="chev blank"></span><img src="../icons/files/ts.svg" />index.ts</div>
+          <div class="row file indent-2"><span class="chev blank"></span><img src="../icons/files/tsx.svg" />App.tsx</div>
+          <div class="row file indent-2"><span class="chev blank"></span><img src="../icons/files/css.svg" />styles.css</div>
+          <div class="row folder indent-2"><span class="chev"></span><img src="../icons/folders/components.svg" />components</div>
+          <div class="row file indent-3"><span class="chev blank"></span><img src="../icons/files/jsx.svg" />Button.jsx</div>
+          <div class="row file indent-1"><span class="chev blank"></span><img src="../icons/files/json.svg" />package.json</div>
+          <div class="row file indent-1"><span class="chev blank"></span><img src="../icons/files/tsconfig.svg" />tsconfig.json</div>
+          <div class="row file indent-1"><span class="chev blank"></span><img src="../icons/files/vite.svg" />vite.config.ts</div>
+          <div class="row file indent-1"><span class="chev blank"></span><img src="../icons/files/md.svg" />README.md</div>
+          <div class="row file indent-1"><span class="chev blank"></span><img src="../icons/files/git.svg" />.gitignore</div>
+          <div class="row file indent-1"><span class="chev blank"></span><img src="../icons/files/license.svg" />LICENSE</div>
+          <div class="row folder indent-1"><span class="chev"></span><img src="../icons/folders/lib.svg" />crates</div>
+          <div class="row file indent-2"><span class="chev blank"></span><img src="../icons/files/rust.svg" />main.rs</div>
+          <div class="row file indent-2"><span class="chev blank"></span><img src="../icons/files/toml.svg" />Cargo.toml</div>
+          <div class="row folder indent-1"><span class="chev"></span><img src="../icons/folders/bin.svg" />docker</div>
+          <div class="row file indent-2"><span class="chev blank"></span><img src="../icons/files/docker.svg" />Dockerfile</div>
+          <div class="row file indent-2"><span class="chev blank"></span><img src="../icons/files/yaml.svg" />compose.yaml</div>
+          <div class="row folder indent-1"><span class="chev"></span><img src="../icons/folders/docs.svg" />docs</div>
+          <div class="row file indent-2"><span class="chev blank"></span><img src="../icons/files/pdf.svg" />guide.pdf</div>
+          <div class="row file indent-1 dim"><span class="chev blank"></span><img src="../icons/files/txt.svg" />notes.txt</div>
+        </div>
+      </div>
+
+      <div class="panel grid-panel">
+        <p class="section-label">Files</p>
+        <div class="tiles">
+          <div class="tile"><img src="../icons/files/js.svg" /><span>JavaScript</span></div>
+          <div class="tile"><img src="../icons/files/ts.svg" /><span>TypeScript</span></div>
+          <div class="tile"><img src="../icons/files/py.svg" /><span>Python</span></div>
+          <div class="tile"><img src="../icons/files/rust.svg" /><span>Rust</span></div>
+          <div class="tile"><img src="../icons/files/go.svg" /><span>Go</span></div>
+          <div class="tile"><img src="../icons/files/java.svg" /><span>Java</span></div>
+          <div class="tile"><img src="../icons/files/cs.svg" /><span>C#</span></div>
+          <div class="tile"><img src="../icons/files/cpp.svg" /><span>C++</span></div>
+          <div class="tile"><img src="../icons/files/html.svg" /><span>HTML</span></div>
+          <div class="tile"><img src="../icons/files/css.svg" /><span>CSS</span></div>
+          <div class="tile"><img src="../icons/files/sass.svg" /><span>Sass</span></div>
+          <div class="tile"><img src="../icons/files/vue.svg" /><span>Vue</span></div>
+          <div class="tile"><img src="../icons/files/svelte.svg" /><span>Svelte</span></div>
+          <div class="tile"><img src="../icons/files/astro.svg" /><span>Astro</span></div>
+          <div class="tile"><img src="../icons/files/json.svg" /><span>JSON</span></div>
+          <div class="tile"><img src="../icons/files/yaml.svg" /><span>YAML</span></div>
+          <div class="tile"><img src="../icons/files/toml.svg" /><span>TOML</span></div>
+          <div class="tile"><img src="../icons/files/xml.svg" /><span>XML</span></div>
+          <div class="tile"><img src="../icons/files/md.svg" /><span>Markdown</span></div>
+          <div class="tile"><img src="../icons/files/sql.svg" /><span>SQL</span></div>
+          <div class="tile"><img src="../icons/files/docker.svg" /><span>Docker</span></div>
+          <div class="tile"><img src="../icons/files/git.svg" /><span>Git</span></div>
+          <div class="tile"><img src="../icons/files/gql.svg" /><span>GraphQL</span></div>
+          <div class="tile"><img src="../icons/files/prisma.svg" /><span>Prisma</span></div>
+          <div class="tile"><img src="../icons/files/kubernetes.svg" /><span>Kubernetes</span></div>
+          <div class="tile"><img src="../icons/files/terraform.svg" /><span>Terraform</span></div>
+          <div class="tile"><img src="../icons/files/zig.svg" /><span>Zig</span></div>
+          <div class="tile"><img src="../icons/files/swift.svg" /><span>Swift</span></div>
+          <div class="tile"><img src="../icons/files/lua.svg" /><span>Lua</span></div>
+          <div class="tile"><img src="../icons/files/ruby.svg" /><span>Ruby</span></div>
+          <div class="tile"><img src="../icons/files/php.svg" /><span>PHP</span></div>
+          <div class="tile"><img src="../icons/files/shell.svg" /><span>Shell</span></div>
+          <div class="tile"><img src="../icons/files/jupyter.svg" /><span>Jupyter</span></div>
+          <div class="tile"><img src="../icons/files/pdf.svg" /><span>PDF</span></div>
+          <div class="tile"><img src="../icons/files/zip.svg" /><span>Archive</span></div>
+        </div>
+
+        <div class="folders">
+          <p class="section-label">Folders</p>
+          <div class="folder-row">
+            <div class="folder-tile"><img src="../icons/folders/folder.svg" /><span>default</span></div>
+            <div class="folder-tile"><img src="../icons/folders/src.svg" /><span>src</span></div>
+            <div class="folder-tile"><img src="../icons/folders/components.svg" /><span>components</span></div>
+            <div class="folder-tile"><img src="../icons/folders/api.svg" /><span>api</span></div>
+            <div class="folder-tile"><img src="../icons/folders/assets.svg" /><span>assets</span></div>
+            <div class="folder-tile"><img src="../icons/folders/test.svg" /><span>test</span></div>
+            <div class="folder-tile"><img src="../icons/folders/docs.svg" /><span>docs</span></div>
+            <div class="folder-tile"><img src="../icons/folders/git.svg" /><span>.git</span></div>
+            <div class="folder-tile"><img src="../icons/folders/node_modules.svg" /><span>node_modules</span></div>
+            <div class="folder-tile"><img src="../icons/folders/config.svg" /><span>config</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
